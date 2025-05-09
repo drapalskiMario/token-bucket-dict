@@ -1,0 +1,101 @@
+{
+	"info": {
+		"_postman_id": "301a839d-2479-4770-a68e-edf204d27358",
+		"name": "token-bucket-dict",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "39450114"
+	},
+	"item": [
+		{
+			"name": "entries",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "PI-RequestingParticipant",
+								"value": "12345678",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Jorge Cezar\",\r\n    \"key\": \"+5561988880000\",\r\n    \"keyType\": \"PHONE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/entries"
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "PI-RequestingParticipant",
+								"value": "12345678",
+								"type": "text"
+							},
+							{
+								"key": "PI-PayerId",
+								"value": "69038601000",
+								"type": "text"
+							},
+							{
+								"key": "PI-EndToEndId",
+								"value": "9bb9037a-f9fa-4139-8df5-cbae9cf25a36",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/entries/marcos@email.com"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "bucket",
+			"item": [
+				{
+					"name": "get",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "PI-RequestingParticipant",
+								"value": "12345678",
+								"type": "text"
+							},
+							{
+								"key": "PI-PayerId",
+								"value": "69038601000",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:3000/api/buckets/get_entry_natural_person_email_phone"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
